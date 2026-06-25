@@ -1,17 +1,17 @@
-import express from "express"
-import dotenv from "dotenv"
-import { fetchPaperMetadata } from "./services/arxiv.service.js"
-dotenv.config()
+import express from "express";
+import dotenv from "dotenv";
+import paperRouter from "./routes/paper.route.js";
+dotenv.config();
 
-const app = express()
+const app = express();
+app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("Hello World!")
-})
+app.use("/api/papers", paperRouter);
 
 app.listen(process.env.PORT, () => {
-  console.log(`Server is running on port ${process.env.PORT}`)
-})
+  console.log(`Server is running on port ${process.env.PORT}`);
+});
 
-
-fetchPaperMetadata("1706.03762")
+app.get("/", (req, res) => {
+  res.send("Server started");
+});

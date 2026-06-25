@@ -1,5 +1,5 @@
 {
-  "id": "0b222b24-67e9-447e-8ef6-08df45e384c2",
+  "id": "787e3e35-3414-4062-96e2-c493aeefb2ac",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -32,6 +32,12 @@
           "primaryKey": false,
           "notNull": true
         },
+        "authors": {
+          "name": "authors",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
         "pdf_url": {
           "name": "pdf_url",
           "type": "text",
@@ -49,7 +55,15 @@
       "indexes": {},
       "foreignKeys": {},
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {},
+      "uniqueConstraints": {
+        "papers_arxiv_id_unique": {
+          "name": "papers_arxiv_id_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "arxiv_id"
+          ]
+        }
+      },
       "policies": {},
       "checkConstraints": {},
       "isRLSEnabled": false
