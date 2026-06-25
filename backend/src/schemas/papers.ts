@@ -7,5 +7,6 @@ export const papers = pgTable("papers", {
   abstract: text("abstract").notNull(),
   authors:text("authors").notNull(),
   pdfUrl: text("pdf_url").notNull(),
+  pdfPath:text("pdf_path"),
   createdAt: timestamp("created_at").defaultNow(),
 });

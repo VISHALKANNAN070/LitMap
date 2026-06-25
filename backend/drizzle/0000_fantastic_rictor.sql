@@ -5,6 +5,7 @@ CREATE TABLE "papers" (
 	"abstract" text NOT NULL,
 	"authors" text NOT NULL,
 	"pdf_url" text NOT NULL,
+	"pdf_path" text,
 	"created_at" timestamp DEFAULT now(),
 	CONSTRAINT "papers_arxiv_id_unique" UNIQUE("arxiv_id")
 );

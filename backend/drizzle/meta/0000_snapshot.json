@@ -1,5 +1,5 @@
 {
-  "id": "787e3e35-3414-4062-96e2-c493aeefb2ac",
+  "id": "fe0d0b50-9118-4772-a80d-554293e43816",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -43,6 +43,12 @@
           "type": "text",
           "primaryKey": false,
           "notNull": true
+        },
+        "pdf_path": {
+          "name": "pdf_path",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
         },
         "created_at": {
           "name": "created_at",

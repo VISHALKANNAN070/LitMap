@@ -12,8 +12,9 @@ export const importPaperController = async (req: Request, res: Response) => {
     console.log(paper);
     return res.status(201).json({ success: true, paper });
   } catch (error) {
+    console.dir(error, { depth: null });
     return res.status(500).json({
-      error: error instanceof Error ? error.message : "Unknown Error",
+      message: error instanceof Error ? error.message : "Unknown error",
     });
   }
 };
